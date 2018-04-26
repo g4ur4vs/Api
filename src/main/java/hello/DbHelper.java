@@ -68,7 +68,7 @@ public class DbHelper {
 
 		String sql = "SELECT * FROM bond_users";
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		JSONArray jsonArray = new JSONArray();
 		while (rs.next()) {
@@ -253,7 +253,7 @@ public class DbHelper {
 		dbconnect();
 		String sql = "Select * from bond_users WHERE email = '" + email.toLowerCase() + "' ";
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 		RegisterUser userDetails = null;
 		while (rs.next()) {
 
@@ -317,7 +317,7 @@ public class DbHelper {
 		stmt = conn.prepareStatement(sql);
 		// stmt.setString(1, email);
 		System.out.println(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		System.out.println(rs.next());
 		if (rs.getRow() > 0) {
@@ -358,7 +358,7 @@ public class DbHelper {
 		stmt = conn.prepareStatement(sql);
 		// stmt.setString(1, email);
 		System.out.println(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		System.out.println(rs.next());
 
@@ -392,7 +392,7 @@ public class DbHelper {
 
 		String sql = "SELECT * FROM bond_valid_emails WHERE email_id= '" + email.toLowerCase() + "' ";
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		System.out.println(sql);
 
@@ -427,7 +427,7 @@ public class DbHelper {
 		String sql = "SELECT * FROM bond_users  WHERE name LIKE '%" + character + "%' ORDER BY name ASC ";
 		stmt = conn.prepareStatement(sql);
 		System.out.println(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 		while (rs.next()) {
 
 			SearchResults obj = new SearchResults();
@@ -467,7 +467,7 @@ public class DbHelper {
 		String sql = "Select * from bond_notification";
 
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		JSONArray jsonArray = new JSONArray();
 		while (rs.next()) {
@@ -497,7 +497,7 @@ public class DbHelper {
 		String sql = "Select * from bond_users where category= '" + category.toLowerCase() + "'";
 		System.out.println(sql);
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 		JSONArray jArray = new JSONArray();
 
 		while (rs.next()) {
@@ -556,7 +556,7 @@ public class DbHelper {
 		String sql = "select * from bond_users where user_type='" + usertype + "' AND  category='"
 				+ category.toLowerCase() + "' ";
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		JSONArray jsonArray = new JSONArray();
 		while (rs.next()) {
@@ -581,7 +581,7 @@ public class DbHelper {
 		dbconnect();
 		String sql = "select * from bond_users ORDER BY name ASC ";
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		JSONArray jsonArray = new JSONArray();
 		while (rs.next()) {
@@ -609,7 +609,7 @@ public class DbHelper {
 		String sql = "select * from resources where category='" + category.toLowerCase() + "' AND res_type='" + res_type
 				+ "'";
 		stmt = conn.prepareStatement(sql);
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery();
 
 		JSONArray jsonArray = new JSONArray();
 		while (rs.next()) {
