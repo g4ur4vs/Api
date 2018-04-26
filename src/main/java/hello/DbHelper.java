@@ -120,7 +120,7 @@ public class DbHelper {
 		//
 		System.out.println(sql);
 		stmt = conn.prepareStatement(sql);
-		stmt.executeQuery(sql);
+		stmt.executeQuery();
 		stmt.close();
 		conn.close();
 
